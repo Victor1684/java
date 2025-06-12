@@ -99,7 +99,7 @@ public class CadastroPessoa extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new TelaHome(); // Certifique-se de que essa classe exista
+                new MenuPrincipal(); 
             }
         });
 
