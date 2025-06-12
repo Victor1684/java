@@ -42,14 +42,14 @@ public class MenuPrincipal extends JFrame {
         btnNovaPessoa.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new CadastroPessoa(); // nova classe renomeada anteriormente
+                new TelaCadastroPessoa(); 
             }
         });
 
         btnVisualizar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new TelaListagem(); // supondo que essa tela já exista
+                new TelaConsulta(); 
             }
         });
 
