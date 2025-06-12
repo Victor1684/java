@@ -48,7 +48,7 @@ public class TelaAcesso extends JFrame {
 
                 if (usuario.equals("admin") && senha.equals("123")) {
                     dispose();
-                    new MenuPrincipal(); // nome diferente para TelaHome
+                    new MenuPrincipal(); 
                 } else {
                     JOptionPane.showMessageDialog(null, "Dados inválidos. Tente novamente.");
                 }
