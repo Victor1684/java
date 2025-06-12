@@ -4,52 +4,53 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class TelaLogin extends JFrame {
+public class TelaAcesso extends JFrame {
 
-    public TelaLogin() {
-        setTitle("Login - Sistema Imobiliário");
-        setSize(400, 300);
+    public TelaAcesso() {
+        setTitle("Acesso ao Sistema");
+        setSize(420, 280);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
-        getContentPane().setBackground(new Color(240, 240, 240));
+        getContentPane().setBackground(new Color(230, 230, 250)); // lavanda
 
-        JLabel titulo = new JLabel("Bem-vindo à Imobiliária!");
-        titulo.setFont(new Font("Arial", Font.BOLD, 18));
-        titulo.setBounds(80, 20, 300, 30);
-        add(titulo);
+        JLabel lblTitulo = new JLabel("Portal da Imobiliária Confiança");
+        lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 17));
+        lblTitulo.setBounds(50, 20, 320, 25);
+        lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+        add(lblTitulo);
 
-        JLabel usuarioLabel = new JLabel("Usuário:");
-        usuarioLabel.setBounds(50, 70, 80, 25);
-        add(usuarioLabel);
+        JLabel lblUsuario = new JLabel("Login:");
+        lblUsuario.setBounds(50, 70, 80, 25);
+        add(lblUsuario);
 
-        JTextField usuarioField = new JTextField();
-        usuarioField.setBounds(130, 70, 200, 25);
-        add(usuarioField);
+        JTextField txtUsuario = new JTextField();
+        txtUsuario.setBounds(130, 70, 220, 25);
+        add(txtUsuario);
 
-        JLabel senhaLabel = new JLabel("Senha:");
-        senhaLabel.setBounds(50, 110, 80, 25);
-        add(senhaLabel);
+        JLabel lblSenha = new JLabel("Senha:");
+        lblSenha.setBounds(50, 110, 80, 25);
+        add(lblSenha);
 
-        JPasswordField senhaField = new JPasswordField();
-        senhaField.setBounds(130, 110, 200, 25);
-        add(senhaField);
+        JPasswordField txtSenha = new JPasswordField();
+        txtSenha.setBounds(130, 110, 220, 25);
+        add(txtSenha);
 
-        JButton loginButton = new JButton("Entrar");
-        loginButton.setBounds(150, 160, 100, 30);
-        loginButton.setBackground(new Color(70, 130, 180));
-        loginButton.setForeground(Color.WHITE);
-        add(loginButton);
+        JButton btnEntrar = new JButton("Acessar");
+        btnEntrar.setBounds(150, 165, 120, 30);
+        btnEntrar.setBackground(new Color(46, 139, 87)); // verde escuro
+        btnEntrar.setForeground(Color.WHITE);
+        add(btnEntrar);
 
-        loginButton.addActionListener(new ActionListener() {
+        btnEntrar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String usuario = usuarioField.getText();
-                String senha = new String(senhaField.getPassword());
+                String usuario = txtUsuario.getText().trim();
+                String senha = new String(txtSenha.getPassword());
 
-                if (usuario.equals("admin")&& senha.equals("123")) {
+                if (usuario.equals("admin") && senha.equals("123")) {
                     dispose();
-                    new TelaHome();
+                    new MenuPrincipal(); // nome diferente para TelaHome
                 } else {
-                    JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
+                    JOptionPane.showMessageDialog(null, "Dados inválidos. Tente novamente.");
                 }
             }
         });
@@ -59,6 +60,6 @@ public class TelaLogin extends JFrame {
     }
 
     public static void main(String[] args) {
-        new TelaLogin();
+        new TelaAcesso();
     }
 }
