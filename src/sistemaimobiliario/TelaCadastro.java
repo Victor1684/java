@@ -4,98 +4,102 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class TelaCadastro extends JFrame {
+public class CadastroPessoa extends JFrame {
 
-    public TelaCadastro() {
-        setTitle("Cadastro de Pessoa");
+    public CadastroPessoa() {
+        setTitle("Formulário de Cadastro");
         setSize(500, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
-        getContentPane().setBackground(new Color(250, 250, 250));
+        getContentPane().setBackground(Color.WHITE);
 
-        JLabel titulo = new JLabel("Cadastro de Pessoa");
-        titulo.setFont(new Font("Segoe UI", Font.BOLD, 20));
-        titulo.setBounds(150, 20, 300, 30);
-        add(titulo);
+        JLabel lblCabecalho = new JLabel("Formulário de Cadastro");
+        lblCabecalho.setFont(new Font("Arial", Font.BOLD, 22));
+        lblCabecalho.setBounds(130, 25, 300, 25);
+        add(lblCabecalho);
 
-        JLabel nomeLabel = new JLabel("Nome:");
-        nomeLabel.setBounds(50, 70, 100, 25);
-        add(nomeLabel);
-        JTextField nomeField = new JTextField();
-        nomeField.setBounds(150, 70, 250, 25);
-        add(nomeField);
+        // Campos de entrada
+        JLabel lblNome = new JLabel("Nome completo:");
+        lblNome.setBounds(40, 80, 120, 20);
+        add(lblNome);
+        JTextField txtNome = new JTextField();
+        txtNome.setBounds(170, 80, 270, 25);
+        add(txtNome);
 
-        JLabel cpfLabel = new JLabel("CPF:");
-        cpfLabel.setBounds(50, 110, 100, 25);
-        add(cpfLabel);
-        JTextField cpfField = new JTextField();
-        cpfField.setBounds(150, 110, 250, 25);
-        add(cpfField);
+        JLabel lblCpf = new JLabel("CPF:");
+        lblCpf.setBounds(40, 120, 120, 20);
+        add(lblCpf);
+        JTextField txtCpf = new JTextField();
+        txtCpf.setBounds(170, 120, 270, 25);
+        add(txtCpf);
 
-        JLabel dataNascLabel = new JLabel("Data de Nascimento:");
-        dataNascLabel.setBounds(50, 150, 150, 25);
-        add(dataNascLabel);
-        JTextField dataNascField = new JTextField();
-        dataNascField.setBounds(200, 150, 200, 25);
-        add(dataNascField);
+        JLabel lblNascimento = new JLabel("Nascimento:");
+        lblNascimento.setBounds(40, 160, 120, 20);
+        add(lblNascimento);
+        JTextField txtNascimento = new JTextField();
+        txtNascimento.setBounds(170, 160, 270, 25);
+        add(txtNascimento);
 
-        JLabel rendaLabel = new JLabel("Renda:");
-        rendaLabel.setBounds(50, 190, 100, 25);
-        add(rendaLabel);
-        JTextField rendaField = new JTextField();
-        rendaField.setBounds(150, 190, 250, 25);
-        add(rendaField);
+        JLabel lblRenda = new JLabel("Renda mensal:");
+        lblRenda.setBounds(40, 200, 120, 20);
+        add(lblRenda);
+        JTextField txtRenda = new JTextField();
+        txtRenda.setBounds(170, 200, 270, 25);
+        add(txtRenda);
 
-        JLabel estadoCivilLabel = new JLabel("Estado Civil:");
-        estadoCivilLabel.setBounds(50, 230, 100, 25);
-        add(estadoCivilLabel);
-        JTextField estadoCivilField = new JTextField();
-        estadoCivilField.setBounds(150, 230, 250, 25);
-        add(estadoCivilField);
+        JLabel lblEstado = new JLabel("Estado civil:");
+        lblEstado.setBounds(40, 240, 120, 20);
+        add(lblEstado);
+        JTextField txtEstado = new JTextField();
+        txtEstado.setBounds(170, 240, 270, 25);
+        add(txtEstado);
 
-        JLabel enderecoLabel = new JLabel("Endereço:");
-        enderecoLabel.setBounds(50, 270, 100, 25);
-        add(enderecoLabel);
-        JTextField enderecoField = new JTextField();
-        enderecoField.setBounds(150, 270, 250, 25);
-        add(enderecoField);
+        JLabel lblEndereco = new JLabel("Endereço:");
+        lblEndereco.setBounds(40, 280, 120, 20);
+        add(lblEndereco);
+        JTextField txtEndereco = new JTextField();
+        txtEndereco.setBounds(170, 280, 270, 25);
+        add(txtEndereco);
 
-        JLabel trabalhoLabel = new JLabel("Tipo de Trabalho:");
-        trabalhoLabel.setBounds(50, 310, 150, 25);
-        add(trabalhoLabel);
+        JLabel lblProfissao = new JLabel("Trabalho:");
+        lblProfissao.setBounds(40, 320, 120, 20);
+        add(lblProfissao);
+        String[] opcoesTrabalho = {"CLT", "PJ", "Autônomo"};
+        JComboBox<String> comboTrabalho = new JComboBox<>(opcoesTrabalho);
+        comboTrabalho.setBounds(170, 320, 270, 25);
+        add(comboTrabalho);
 
-        String[] tiposTrabalho = {"CLT", "PJ", "Autônomo"};
-        JComboBox<String> trabalhoCombo = new JComboBox<>(tiposTrabalho);
-        trabalhoCombo.setBounds(200, 310, 200, 25);
-        add(trabalhoCombo);
+        JButton btnSalvar = new JButton("Salvar");
+        btnSalvar.setBounds(180, 390, 130, 40);
+        btnSalvar.setBackground(new Color(34, 139, 34));
+        btnSalvar.setForeground(Color.WHITE);
+        add(btnSalvar);
 
-        JButton cadastrarButton = new JButton("Cadastrar");
-        cadastrarButton.setBounds(170, 370, 130, 35);
-        cadastrarButton.setBackground(new Color(70, 130, 180));
-        cadastrarButton.setForeground(Color.WHITE);
-        add(cadastrarButton);
+        JButton btnSair = new JButton("Sair");
+        btnSair.setBounds(20, 500, 80, 30);
+        add(btnSair);
 
-        JButton voltarButton = new JButton("Voltar");
-        voltarButton.setBounds(10, 510, 90, 30);
-        add(voltarButton);
-
-        cadastrarButton.addActionListener(new ActionListener() {
+        // Ação do botão salvar
+        btnSalvar.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Pessoa cadastrada com sucesso!");
-                nomeField.setText("");
-                cpfField.setText("");
-                dataNascField.setText("");
-                rendaField.setText("");
-                estadoCivilField.setText("");
-                enderecoField.setText("");
-                trabalhoCombo.setSelectedIndex(0);
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
+                txtNome.setText("");
+                txtCpf.setText("");
+                txtNascimento.setText("");
+                txtRenda.setText("");
+                txtEstado.setText("");
+                txtEndereco.setText("");
+                comboTrabalho.setSelectedIndex(0);
             }
         });
 
-        voltarButton.addActionListener(new ActionListener() {
+        // Ação do botão sair
+        btnSair.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new TelaHome();
+                new TelaHome(); // Certifique-se de que essa classe exista
             }
         });
 
